@@ -1,0 +1,11 @@
+version: "3"
+services:
+    parzival:
+        build: ./parzival_db
+        environment:
+            SA_PASSWORD: "SqlPass24#"
+            ACCEPT_EULA: "Y"
+        ports:
+            - "1533:1433"
+        container_name: parzival
+        hostname: parzival
