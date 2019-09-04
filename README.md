@@ -1,7 +1,6 @@
 [![N|Solid](http://dbamastery.com/wp-content/uploads/2019/01/cropped-Screen-Shot-2019-01-15-at-9.06.49-PM-1-1.png)](http://dbamastery.com/)
 
-# Talks - presentations
-This is a summary of presentations that I have or plan to give for SQL Server User groups, SQL Saturdays, PASS events, webinars or any other type of community events.
+Welcome to you GitHub repository, here you will find any session I have delivered for SQL Server User groups, SQL Saturdays, PASS events, webinars or any other type of community events.
 
 # Webinars:
 
