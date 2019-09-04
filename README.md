@@ -1,13 +1,14 @@
 [![N|Solid](http://dbamastery.com/wp-content/uploads/2019/01/cropped-Screen-Shot-2019-01-15-at-9.06.49-PM-1-1.png)](http://dbamastery.com/)
 
 # Talks - presentations
+This is a summary of presentations that I have or plan to give for SQL Server User groups, SQL Saturdays, PASS events, webinars or any other type of community events.
 
-Welcome to my GitHub repository, here you will find all the material from previous \ coming presentations presented during SQL Server user groups, SQL Saturday or any other SQL Server event.
+# Webinars:
 
-## 24 Hours of pass recording:  
+### 24 Hours of pass recording:  
 [![24 Hours of PASS](https://img.youtube.com/vi/Nv3G-XhPvi4/hqdefault.jpg)](https://youtu.be/Nv3G-XhPvi4 "24 Hours of PASS - Carlos Robles")
 
-## Guatemala SQL Server User group recording:
+### Guatemala SQL Server User group recording:
 [![GTSSUG - Webinar](https://img.youtube.com/vi/rjxMsaS8tSs/hqdefault.jpg)](https://youtu.be/rjxMsaS8tSs "GTSSUG - Webinar")
 
 # Follow me
