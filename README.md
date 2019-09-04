@@ -1,6 +1,6 @@
 # DBA Mastery - Talk \ presentations
 
-[![N|Solid](http://dbamastery.com/wp-content/uploads/2019/01/DBM-LOGO.png)](http://dbamastery.com/)
+[![N|Solid](http://dbamastery.com/wp-content/uploads/2019/01/cropped-Screen-Shot-2019-01-15-at-9.06.49-PM-1-1.png)](http://dbamastery.com/)
 
 Welcome to my GitHub repository, here you will find all the material from previous \ coming presentations presented during SQL Server user groups, SQL Saturday or any other SQL Server event.
 
