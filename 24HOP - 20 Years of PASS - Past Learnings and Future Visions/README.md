@@ -6,4 +6,4 @@ In this session we will explore the options we have when working with SQL Server
 
 Join me to discuss further about this interesting topic that is called by some experts as "The Future of Database Infrastructure".
 
-[![24 Hours of PASS](https://img.youtube.com/vi/Nv3G-XhPvi4/maxresdefault.jpg)](https://youtu.be/Nv3G-XhPvi4 "24 Hours of PASS - Carlos Robles")
+[![24 Hours of PASS](https://img.youtube.com/vi/Nv3G-XhPvi4/hqdefault.jpg)](https://youtu.be/Nv3G-XhPvi4 "24 Hours of PASS - Carlos Robles")
