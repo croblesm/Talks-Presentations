@@ -5,6 +5,5 @@ En esta sesion exploraremos todos los aspectos basicos y avanzados que tenemos q
 
 Tambien veremos ejemplos de la vida real, tal como tomar backups y restaurar bases de datos que existen dentro de un container, alta disponibilidad, actualizacion de version, pero lo mas importante se demostrara la portabilidad de esta esta plataforma.
 
-# YouTube
+## YouTube
 [![Todo sobre SQL Server Containers en Docker y Kubernetes](https://img.youtube.com/vi/rjxMsaS8tSs/hqdefault.jpg)](https://youtu.be/rjxMsaS8tSs "Todo sobre SQL Server Containers en Docker y Kubernetes")
-
