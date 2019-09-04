@@ -1,0 +1,304 @@
+SRV1:
+Databases is C drive --> Really bad practice
+Missing Service packs
+Missing Cummulative updates
+Missing latest SQL Server performance fixes trace flags
+No index maintenance jobs --> Really bad practice
+No table statistics maintenance jobs  --> Really bad practice
+No database consistency check jobs
+Missing locks pages in memory Windows configuration
+Missing database instant file initialization Windows configuration
+Cost threshold for parallelism too low
+MAXDOP is not configured
+Min and Max server memory are not configured --> Performance monitor activated
+Show advanced options is not configured
+Max degree of parallelism too low
+TempDB is not created according best practices
+Missing indexes, should be created
+Percent growth is enabled for all database --> Really bad practice
+Autoshrink is enabled for synergy --> Really bad practice
+Compatibility level for synergy DB is set for SQL Server 2005 (90)
+Page verification should be changed to CHECKSUM for synergy
+There are some FullText wait times
+Purge MSDB history
+High number of VLFs
+
+------------------------------------------------------------------------------------------------------------------------------
+   
+   1)    Physical Server Information - Number of CPUs, memory, etc.
+   2)    Hard drive space available - in Megabytes
+   3)    SQL Server Information - Server name, version of SQL server, Patch level, etc.
+   4)    SQL Server Settings - SP_CONFIGURE
+   5)    Database and Log file Physical Locations - All the information regarding the database(s) location
+   6)    Database Details - All database information
+   7)    List of SQL Jobs - What jobs execute
+   8)    Last Backup Dates -  What and when the last backups was completed
+   9)    Failed SQL Jobs - Jobs that have failed before. This is important as the new installation may have the same failures
+   10)  Disabled Jobs - Jobs there but not set to execute
+   11)  SQL Server Services Status - What services were installed and running
+   12)  Link Server Details - What other servers is SQL Server linked to
+   13)  Database Mail Details - See if it is installed and running
+   14)  Database Mirroring Details - Databases mirrored status
+   15)  Database Log Shipping Details
+   16)  Cluster Details - Information on cluster configuration
+   17)  Always On Replication Details. SQL 2012 and newer
+ 
+ 
+   **NOTE: If SQL server has reports services installed (SSRS) then you will need to export the SSRS key. 
+   Below is a command to export the SSRS key. You can then use the GUI to import the key 
+ 
+   The command line utilities are installed when you choose Administration Tools during Setup. 
+   You can run them from any directory on your file system. 
+   Rskeymgmt.exe is located at <drive>:\Program Files\Microsoft SQL Server\...\Tools\Binn
+ 
+   Here is an example to backup the SSRS key -e is to extract, -f is the location place the backup -P is a password used
+ 
+    rskeymgmt.exe -e -f D:\SSRS-Backupkey\rskeybackup.rskey -Passwordhere 
+ 
+   Here is an example to restore the SSRS key -a is to apply, -f is the location place the backup -P is a password used
+ 
+    rskeymgmt.exe -a -f D:\SSRS-Backupkey\rskeybackup.rskey -Passwordhere 
+ 
+   Here are the arguments
+   -e  Use this argument to back up the keys from the Keys table
+   -a  Use this argument to apply the back up copy to the Keys table
+   -r  Use this argument to remove the existing keys from the Keys table
+   -d  Use this argument to delete all encrypted values from the report server database
+   See Books On Line (BOL) for more details.
+ 
+This vital information is for the following: --> ACP-99VM0D-1D2 <-- SQL Server
+Executed on: 
+
+2016-05-27 11:18:25.003
+
+ 
+
+SQL Server Documentation Collector for Disaster Recovery. Loading SQL Server Details into tables. Please wait....
+
+Configuration option 'show advanced options' changed from 0 to 1. Run the RECONFIGURE statement to install.
+Configuration option 'show advanced options' changed from 1 to 0. Run the RECONFIGURE statement to install.
+Msg 15281, Level 16, State 1, Procedure sysmail_help_status_sp, Line 0
+SQL Server blocked access to procedure 'dbo.sysmail_help_status_sp' of component 'Database Mail XPs' because this component is turned off as part of the security configuration for this server. A system administrator can enable the use of 'Database Mail XPs' by using sp_configure. For more information about enabling 'Database Mail XPs', see "Surface Area Configuration" in SQL Server Books Online.
+ 
+ 
+--> 1) Physical Server Settings <--
+ 
+cpu_ticks,ms_ticks,cpu_count,hyperthread_ratio,physical_memory_in_bytes,virtual_memory_in_bytes,bpool_committed,bpool_commit_target,bpool_visible,stack_size_in_bytes,os_quantum,os_error_mode,os_priority_class,max_workers_count,scheduler_count,scheduler_total_count,deadlock_monitor_serial_number,sqlserver_start_time_ms_ticks,sqlserver_start_time,affinity_type,affinity_type_desc,process_kernel_time_ms,process_user_time_ms,time_source,time_source_desc
+3358766084347346,1199558685,4,1,8589402112,8796092891136,440192,688561,688561,2093056,4,5,32,512,4,8,239903,24492,2016-05-13 14:05:40.523,2,AUTO,4959911,34251407,1,MULTIMEDIA_TIMER
+
+ 
+--> 2) Hard Drive Space Available <--
+ 
+Drive,MB free
+C,16710
+D,142633
+E,1893145
+F,4714366
+
+ 
+--> 3) SQL Server Information <--
+ 
+MACHINE NAME,SQL SERVER NAME,INSTANCE NAME,EDITION,PRODUCT VERSION,PRODUCT LEVL,FAILOVER CLUSTERED,SECURITY,USER MODE,COLLATION
+ACP-99VM0D-1D2                                                                                      ,ACP-99VM0D-1D2                                    ,Default Instance,Enterprise Edition (64-bit)   ,10.50.1600.1                  ,RTM                           ,NOT Clustered,SQL Server Security ,Multi User,SQL_Latin1_General_CP1_CI_AS  
+
+ 
+--> 4) SQL Server Settings <--
+ 
+name,description,value,minimum,maximum,value_in_use
+recovery interval (min),Maximum recovery interval in minutes,0,0,32767,0
+allow updates,Allow updates to system tables,0,0,1,0
+user connections,Number of user connections allowed,0,0,32767,0
+locks,Number of locks for all users,0,5000,2147483647,0
+open objects,Number of open database objects,0,0,2147483647,0
+fill factor (%),Default fill factor percentage,0,0,100,0
+disallow results from triggers,Disallow returning results from triggers,0,0,1,0
+nested triggers,Allow triggers to be invoked within triggers,1,0,1,1
+server trigger recursion,Allow recursion for server level triggers,1,0,1,1
+remote access,Allow remote access,1,0,1,1
+default language,default language,0,0,9999,0
+cross db ownership chaining,Allow cross db ownership chaining,0,0,1,0
+max worker threads,Maximum worker threads,0,128,32767,0
+network packet size (B),Network packet size,4096,512,32767,4096
+show advanced options,show advanced options,1,0,1,1
+remote proc trans,Create DTC transaction for remote procedures,0,0,1,0
+c2 audit mode,c2 audit mode,0,0,1,0
+default full-text language,default full-text language,1033,0,2147483647,1033
+two digit year cutoff,two digit year cutoff,2049,1753,9999,2049
+index create memory (KB),Memory for index create sorts (kBytes),0,704,2147483647,0
+priority boost,Priority boost,0,0,1,0
+remote login timeout (s),remote login timeout,20,0,2147483647,20
+remote query timeout (s),remote query timeout,600,0,2147483647,600
+cursor threshold,cursor threshold,-1,-1,2147483647,-1
+set working set size,set working set size,0,0,1,0
+user options,user options,0,0,32767,0
+affinity mask,affinity mask,0,-2147483648,2147483647,0
+max text repl size (B),Maximum size of a text field in replication.,65536,-1,2147483647,65536
+media retention,Tape retention period in days,0,0,365,0
+cost threshold for parallelism,cost threshold for parallelism,5,0,32767,5
+max degree of parallelism,maximum degree of parallelism,0,0,1024,0
+min memory per query (KB),minimum memory per query (kBytes),1024,512,2147483647,1024
+query wait (s),maximum time to wait for query memory (s),-1,-1,2147483647,-1
+min server memory (MB),Minimum size of server memory (MB),0,0,2147483647,0
+max server memory (MB),Maximum size of server memory (MB),2147483647,16,2147483647,2147483647
+query governor cost limit,Maximum estimated cost allowed by query governor,0,0,2147483647,0
+lightweight pooling,User mode scheduler uses lightweight pooling,0,0,1,0
+scan for startup procs,scan for startup stored procedures,0,0,1,0
+awe enabled,AWE enabled in the server,0,0,1,0
+affinity64 mask,affinity64 mask,0,-2147483648,2147483647,0
+affinity I/O mask,affinity I/O mask,0,-2147483648,2147483647,0
+affinity64 I/O mask,affinity64 I/O mask,0,-2147483648,2147483647,0
+transform noise words,Transform noise words for full-text query,0,0,1,0
+precompute rank,Use precomputed rank for full-text query,0,0,1,0
+PH timeout (s),DB connection timeout for full-text protocol handler (s),60,1,3600,60
+clr enabled,CLR user code execution enabled in the server,0,0,1,0
+max full-text crawl range,Maximum  crawl ranges allowed in full-text indexing,4,0,256,4
+ft notify bandwidth (min),Number of reserved full-text notifications buffers,0,0,32767,0
+ft notify bandwidth (max),Max number of full-text notifications buffers,100,0,32767,100
+ft crawl bandwidth (min),Number of reserved full-text crawl buffers,0,0,32767,0
+ft crawl bandwidth (max),Max number of full-text crawl buffers,100,0,32767,100
+default trace enabled,Enable or disable the default trace,1,0,1,1
+blocked process threshold (s),Blocked process reporting threshold,0,0,86400,0
+in-doubt xact resolution,Recovery policy for DTC transactions with unknown outcome,0,0,2,0
+remote admin connections,Dedicated Admin Connections are allowed from remote clients,0,0,1,0
+common criteria compliance enabled,Common Criteria compliance mode enabled,0,0,1,0
+EKM provider enabled,Enable or disable EKM provider,0,0,1,0
+backup compression default,Enable compression of backups by default,1,0,1,1
+filestream access level,Sets the FILESTREAM access level,0,0,2,0
+optimize for ad hoc workloads,When this option is set, plan cache size is further reduced for single-use adhoc OLTP workload.,0,0,1,0
+access check cache bucket count,Default hash bucket count for the access check result security cache,0,0,65536,0
+access check cache quota,Default quota for the access check result security cache,0,0,2147483647,0
+Agent XPs,Enable or disable Agent XPs,1,0,1,1
+SQL Mail XPs,Enable or disable SQL Mail XPs,0,0,1,0
+Database Mail XPs,Enable or disable Database Mail XPs,0,0,1,0
+SMO and DMO XPs,Enable or disable SMO and DMO XPs,1,0,1,1
+Ole Automation Procedures,Enable or disable Ole Automation Procedures,0,0,1,0
+xp_cmdshell,Enable or disable command shell,0,0,1,0
+Ad Hoc Distributed Queries,Enable or disable Ad Hoc Distributed Queries,0,0,1,0
+Replication XPs,Enable or disable Replication XPs,0,0,1,0
+
+ 
+--> 5) Database and Log File Physical Locations <--
+ 
+NAME,physical_name
+master,C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\master.mdf
+mastlog,C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\mastlog.ldf
+tempdev,C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\tempdb.mdf
+templog,C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\templog.ldf
+modeldev,C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\model.mdf
+modellog,C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\modellog.ldf
+MSDBData,C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\MSDBData.mdf
+MSDBLog,C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\MSDBLog.ldf
+syntst_Data,D:\CST\USNY0106\Synergy\db\synergy.mdf
+syntst_Log,D:\CST\USNY0106\Synergy\db\synergy.ldf
+
+ 
+--> 6) Database(s) Details <--
+ 
+database_id,name,physical_name,recovery_model_desc,compatibility_level,collation_name,create_date,user_access,user_access_desc,is_read_only,is_auto_close_on,is_auto_shrink_on,state,state_desc,is_in_standby,is_cleanly_shutdown,is_supplemental_logging_enabled,snapshot_isolation_state,snapshot_isolation_state_desc,is_read_committed_snapshot_on,page_verify_option,page_verify_option_desc,is_auto_create_stats_on,is_auto_update_stats_on,is_auto_update_stats_async_on,is_ansi_null_default_on,is_ansi_nulls_on,is_ansi_padding_on,is_ansi_warnings_on,is_arithabort_on,is_concat_null_yields_null_on,is_numeric_roundabort_on,is_quoted_identifier_on,is_recursive_triggers_on,is_cursor_close_on_commit_on,is_local_cursor_default,is_fulltext_enabled,is_trustworthy_on,is_db_chaining_on,is_parameterization_forced,is_master_key_encrypted_by_server,is_published,is_subscribed,is_merge_published,is_distributor,is_sync_with_backup,service_broker_guid,is_broker_enabled,log_reuse_wait,log_reuse_wait_desc,is_date_correlation_on,source_database_id,owner_sid
+1,master,C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\master.mdf,SIMPLE,100,SQL_Latin1_General_CP1_CI_AS,2003-04-08 09:13:36.390,0,MULTI_USER,0,0,0,0,ONLINE,0,0,0,1,ON,0,2,CHECKSUM,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,00000000-0000-0000-0000-000000000000,0,0,NOTHING,0,NULL,0x01
+
+ 
+--> 7) Last Backup Dates <-- 
+ 
+originating_server_id,name,enabled,description,start_step_id,category_id,owner_sid,notify_level_eventlog,notify_level_email,notify_level_netsend,notify_level_page,notify_email_operator_id,notify_netsend_operator_id,notify_page_operator_id,delete_level,date_created,date_modified,version_number
+0,DBMaintenance.Full backups,1,No description available.,1,3,0x01,2,0,0,0,0,0,0,0,2014-09-26 18:02:43.933,2014-09-26 18:06:50.020,9
+0,DBMaintenance.Log backups,1,No description available.,1,3,0x01,2,0,0,0,0,0,0,0,2014-09-26 18:02:44.440,2014-09-26 18:06:54.433,9
+0,syspolicy_purge_history,1,No description available.,1,0,0x01,0,0,0,0,0,0,0,0,2014-07-29 18:01:40.397,2014-07-29 18:01:40.617,5
+
+ 
+--> 8) List of SQL Jobs <--
+ 
+Database_Name,DaysSinceLastBackup,LastBackupDate
+master,         1,05/26/2016
+model,         1,05/26/2016
+msdb,         1,05/26/2016
+synergy,         1,05/26/2016
+tempdb,NEVER,NEVER     
+
+ 
+--> 9) Failed SQL Jobs <--
+ 
+NAME
+
+** No Failed SQL Jobs Information ** 
+ 
+ --> 10) Disabled Jobs <-- 
+ 
+NAME
+
+** No Disabled Jobs Information ** 
+ 
+--> 11) SQL Server Services Status <--
+ 
+Physical Server Name,SQL Instance Name,SQL Server Services,Current Service Service Status,Date/Time Service Status Checked
+ACP-99VM0D-1D2,MSQLSERVER,MS SQL Server Service,Running.,2016-05-27 11:18:25.167
+ACP-99VM0D-1D2,MSQLSERVER,SQL Server Agent Service,Running.,2016-05-27 11:18:25.177
+ACP-99VM0D-1D2,MSQLSERVER,SQL Browser Service - Instance Independent,Stopped.,2016-05-27 11:18:25.183
+ACP-99VM0D-1D2,MSQLSERVER,Intergration Service - Instance Independent,NOT INSTALLED,2016-05-27 11:18:25.187
+ACP-99VM0D-1D2,MSQLSERVER,Reporting Service,NOT INSTALLED,2016-05-27 11:18:25.193
+ACP-99VM0D-1D2,MSQLSERVER,Analysis Services,NOT INSTALLED,2016-05-27 11:18:25.200
+ACP-99VM0D-1D2,MSQLSERVER,Full Text Search Service,NOT INSTALLED,2016-05-27 11:18:25.203
+
+ 
+--> 12) Link Server Details <--
+ 
+server_id,NAME,product,provider,data_source,location,provider_string,catalog,connect_timeout,query_timeout,is_linked,is_remote_login_enabled,is_rpc_out_enabled,is_data_access_enabled,is_collation_compatible,uses_remote_collation,collation_name,lazy_schema_validation,is_system,is_publisher,is_subscriber,is_distributor,is_nonsql_subscriber,modify_date
+
+** No Link Server Details Information ** 
+ 
+--> 13) Database Mail Details <--
+ 
+Database Mail Service Status
+
+principal_id,principal_name,profile_id,profile_name,is_default
+
+** No Database Mail Service Status Information ** 
+ 
+principal_id,principal_name,profile_id,profile_name,is_default
+
+ ** No Database Mail Service Status Information **
+ 
+-->14) Database Mirroring Status <--
+ 
+Database Name,Mirroring Status
+synergy,Database Mirroring not configured and/or set
+
+ 
+--> Database Mirroring Details
+Mirror DB_Name,Mirroring_State,Mirroring_Role,Mirror_Safety_Level,Mirror_ENDpoint,Mirror_ServerName,Witness_ENDpoint,Witness_State,Failover Timeout in seconds,Mirroring_Redo_Queue,Mirroring_Redo_Queue_Type
+
+** No Database Mirroring Details Information ** 
+ 
+ -->15) Database Log Shipping Details <--
+ 
+status,is_primary,server,database_name,time_since_last_backup,last_backup_file,backup_threshold,is_backup_alert_enabled,time_since_last_copy,last_copied_file,time_since_last_restore,last_restored_file,last_restored_latency,restore_threshold,is_restore_alert_enabled
+
+** No Database Log Shipping Information ** 
+ 
+ -->16) Cluster Details <--
+ 
+Name of all nodes used and are part of this failover cluster
+NodeName
+
+** No Cluster Node Information ** 
+ 
+Drive letters that are part of the resourse group which contain the data and log files
+Drive Letters
+
+** No Cluster Node Drive Information ** 
+ 
+ -->17) Always On Database Replication Details <--
+ 
+** No AlwayOn Replication Information ** 
+** No AlwayOn Replication Listener Information ** 
+ 
+--------------------------------------------------------------------------------------------------------------------
+NOTE: If SQL server has reports (SSRS) then you will need to export the SSRS key. 
+You can export the SSRS key either with the command line tool or the GUI 
+and either to import the key 
+ 
+The command line utilities are installed when you choose Administration Tools during Setup. 
+You can run them from any directory on your file system. 
+Rskeymgmt.exe is located at <drive>:\Program Files\Microsoft SQL Server\...\Tools\Binn
+
+------------------------------------------------------------------------------------------------------------------------------
