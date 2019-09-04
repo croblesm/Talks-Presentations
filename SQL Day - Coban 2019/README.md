@@ -1,7 +1,7 @@
 # Explorando SQL Server containers en Docker y Kubernetes
 ## Abstract
 
-En esta sesion exploraremos juntos todas las opciones que tenemos cuando decidimos correr SQL Server en containers, utilizando ya sea Docker o Kuberentes.
+En esta sesion exploraremos todos los aspectos basicos y avanzados que tenemos que considerar al ejecutar SQL Server en containers, utilizando ya sea Docker o Kubernetes.
 
 Tambien veremos ejemplos de la vida real, tal como tomar backups y restaurar bases de datos que existen dentro de un container, alta disponibilidad, actualizacion de version, pero lo mas importante se demostrara la portabilidad de esta esta plataforma.
 
