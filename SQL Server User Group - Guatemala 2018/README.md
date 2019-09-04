@@ -1,1 +1,1 @@
-#Introduction to Query Store
+# Introduction to Query Store - September 2019
