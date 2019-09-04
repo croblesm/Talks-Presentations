@@ -2,6 +2,8 @@
 
 Welcome to you GitHub repository, here you will find any session I have delivered for SQL Server User groups, SQL Saturdays, PASS events, webinars or any other type of community events.
 
+You can also find more details in my [blog](http://dbamastery.com).
+
 # Webinars
 ### 24 Hours of pass recording:  
 [![24 Hours of PASS](https://img.youtube.com/vi/Nv3G-XhPvi4/hqdefault.jpg)](https://youtu.be/Nv3G-XhPvi4 "24 Hours of PASS - Carlos Robles")
