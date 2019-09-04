@@ -1,4 +1,4 @@
-# SQL Server containers on Docker and Kubernetes and more - June 2019
+# Exploring SQL Server containers on Docker and Kubernetes - June 2019
 ## Abstract
 In this session, you will learn the basics of creating, managing and working with containers for SQL Server in Docker and Kubernetes. We will also explore how the SQL Server Docker image is built from the inside.
 
