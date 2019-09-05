@@ -79,7 +79,7 @@ docker exec -it master_CU14 "bash"
 cd /var/opt/mssql/log
 
 # Looking for the "upgrade" word within the log
-grep -i upgrade errorlog | more
+grep -i upgrade errorlog | grep -i master |  more
 
 # Looking for build version within the log
 grep -i "2017.140.3076" errorlog

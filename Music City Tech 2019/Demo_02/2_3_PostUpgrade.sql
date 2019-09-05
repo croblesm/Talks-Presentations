@@ -9,5 +9,4 @@ SELECT
     SERVERPROPERTY('ServerName') AS [Instance Name],
     SERVERPROPERTY('ProductVersion') AS [Product Version],
     RIGHT(@@version, LEN(@@version)- 3 -charindex (' ON ', @@VERSION)) [OS Version],
-    SERVERPROPERTY ('Edition') AS [Edition]
-FROM sys.dm_os_sys_info;
+    SERVERPROPERTY ('Edition') AS [Edition];

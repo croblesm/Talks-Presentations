@@ -8,6 +8,7 @@
 #   7- Simulate failure (Delete pod)
 #   8- Check pods, make sure new pod is created
 #   9- Check new pod log
+#   10- Simulate failure (Take it home!)
 #
 #   Reference:
 #   https://kubernetes.io/docs/reference/kubectl/cheatsheet/
@@ -49,15 +50,6 @@ kubectl get pods
 # 9- Check new pod log
 kubectl logs -f mssql-deployment-6ff8956466-9sdhs
 
-# Take it home!
-echo "--------------------------------------" && \
-echo "          Simulating failure          " && \
-echo "--------------------------------------" && \
-echo "" && \
-echo "Start time:" `date +"%T"` &&
-echo "--------------------------------------" && \
-echo "" && \
-kubectl get pods && \
-kubectl delete pod --all && \
-MyPod=`kubectl get pods | grep "mssql-deployment" | awk '{ print $1}'` && \
-kubectl logs -f $MyPod
+# 10- Simulate failure (Take it home!)
+cd /Users/carlos/Documents/DBA Mastery/Talks-Presentations/Containers/MusicCityTech/Demo_04
+./4_3_SimulateFailure.sh
