@@ -1,4 +1,7 @@
-# Exploring SQL Server containers on Docker & Kubernetes
+# Exploring SQL Server containers on Docker and Kubernetes - June 2019
 ## Abstract
+In this session, you will learn the basics of creating, managing and working with containers for SQL Server in Docker and Kubernetes. We will also explore how the SQL Server Docker image is built from the inside.
 
-In this session, we will explore the options we have when working with SQL Server running on Docker containers or Kubernetes. Also, will take a look at some real-world scenarios of backing up \ restoring databases in containers, high availability, version upgrades, and the most important portability. Join me to discuss further about this interesting topic that is called by some experts as “The Future of Database Infrastructure”.
+I will show you some real-world scenarios of backing up \ restoring databases in containers, high availability, version upgrades, and the most important portability.
+
+Join me to discuss further about this interesting topic that is called by some experts as “The Future of Database Infrastructure”.
