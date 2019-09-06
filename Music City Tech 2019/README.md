@@ -1,5 +1,5 @@
 # Working with SQL Server containers on Docker
-## Abstract
+## Music City tech 2019 - Nashville, TN
 
 Containers are no longer the future, they are a the present and are here to change the way DBA's used to think about building SQL Server solutions. Spending long periods of time installing, configuring and preparing databases and SQL Server instances is no longer the case with containers. 
 
