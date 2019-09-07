@@ -29,7 +29,7 @@ docker volume create vlm_VersionUpgrade
 # Connect to macOS Linuxkit VM and explore the volumes (bash1 terminal)
 docker inspect vlm_VersionUpgrade
 # screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty
-# cd /var/lib/docker/volumes
+# cd /var/lib/docker/volumes/vlm_VersionUpgrade/_data
 
 # 5- Create CU13 container
 docker run \
@@ -38,7 +38,7 @@ docker run \
 --env 'ACCEPT_EULA=Y' \
 --env 'MSSQL_SA_PASSWORD=SqLr0ck$!' \
 --volume vlm_VersionUpgrade:/var/opt/mssql \
---volume "/Users/carlos/Documents/Containers":/Shared \
+--volume "/Users/carlos/Documents/DBA Mastery/Talks-Presentations/Containers/MusicCityTech":/Shared \
 --publish 1401:1433 \
 --detach mcr.microsoft.com/mssql/server:2017-CU13-ubuntu
 
