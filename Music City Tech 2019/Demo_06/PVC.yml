@@ -1,36 +1,0 @@
----
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: pvc-sql-data
-spec:
-  accessModes:
-  - ReadWriteOnce
-  storageClassName: managed-premium 
-  resources:
-    requests:
-      storage: 10Gi
----
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: pvc-sql-system
-spec:
-  accessModes:
-  - ReadWriteOnce
-  storageClassName: managed-premium 
-  resources:
-    requests:
-      storage: 10Gi
----
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: pvc-sql-log
-spec:
-  accessModes:
-  - ReadWriteOnce
-  storageClassName: managed-premium 
-  resources:
-    requests:
-      storage: 10Gi
