@@ -31,11 +31,11 @@ rt=`grep -ci "Error" $log`
 if [ $rt -gt 0 ]
 then
     # End of script with errors
-    echo -e "\nPlease check the log, there are $rt errors found." | tee -a $log
+    printf "\nPlease check the log, there are $rt errors found \U1F643\n" | tee -a $log
     exit 1
 else
     # End of script with success
-    echo -e "\nNo errors found :D\n" | tee -a $log
-    echo -e "\nThe script was successfully completed." | tee -a $log
+    printf '\nNo errors found \U1F603\n' | tee -a $log
+    printf '\nThe script was successfully completed! \U1F603\n' | tee -a $log
     exit 0
 fi
