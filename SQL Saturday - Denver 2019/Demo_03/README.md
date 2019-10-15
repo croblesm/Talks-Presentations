@@ -21,7 +21,7 @@ Demo_03_
 └── README.md
 ```
 * 2- Inspect [Dockerfile](./hr_app/docker-compose.yml)
-* 3- Docker compose
+* 3- Execute Docker compose
 * 4- Check database objects (Azure Data Studio)
 * 5- Check RESTful API (Backend - RESTful API)
 * 6- Check application (Frontend - Web brower)
