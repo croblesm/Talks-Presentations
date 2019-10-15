@@ -1,0 +1,39 @@
+version: "3.4"
+services:
+    hr-frontend:
+        #build: ./hr-frontend
+        image: crobles10/hr-frontend:1.0
+        container_name: hr-frontend
+        hostname: hr-frontend
+        ports:
+            - "90:80"
+        depends_on:
+            - hr-backend
+    hr-backend:
+        environment:
+            - ASPNETCORE_ENVIRONMENT=DockerAdmin
+            #- ASPNETCORE_ENVIRONMENT=DockerWebApp
+        #build: ./hr-backend
+        image: crobles10/hr-backend:1.0
+        container_name: hr-backend
+        hostname: hr-backend
+        ports:
+            - "5000:80"
+            - "44349:443"
+        networks:
+            - hr_network
+        extra_hosts:
+            - "DEMOTEST:10.0.75.1"
+        depends_on:
+            - hr_sql_dev
+    hr_sql_dev:
+        #build: ./hr-database
+        image: crobles10/hr-database:2.0
+        container_name: hr_sql_dev
+        hostname: hr_sql_dev
+        ports:
+            - "1433:1433"
+        networks:
+            - hr_network
+networks:
+  hr_network:
