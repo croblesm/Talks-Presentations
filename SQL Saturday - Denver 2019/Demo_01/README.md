@@ -2,14 +2,14 @@
 
 * 1- Create custom container
 * 2- Inspect container properties
-* 3- Get SQL Server instance properties (Azure Data Studio)
-* 4- Backup database from source (Azure - Blob)
-* 5- Download backup file from Azure blob storage (Shell script)
-* 6- Restore database in container (Azure Data Studio)
-* 7- Inspect files within container (Azure Data Studio)
-* 8- Create logins and mask data (Azure Data Studio)
-* 9- Test connectivity with new login (Azure Data Studio)
-* 10- Query masked data as Dev team(Azure Data Studio)
+* 3- Get SQL Server instance properties
+* 4- Backup database from source
+* 5- Download backup file from Azure blob storage
+* 6- Restore database in container
+* 7- Inspect files within container
+* 8- Create logins and mask data
+* 9- Test connectivity with new login
+* 10- Query masked data as Dev team
 
 # Questions?
 If you have questions or comments about this demo, don't hesitate to contact me.
