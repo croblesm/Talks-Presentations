@@ -13,8 +13,8 @@ We will explore the options and tools (open source) we have available when worki
 [3- Docker compose - Database + Application](Demo_03)  
 
 
-> Prerequisites:
-Basic experience with Linux, basic familiarity with shell scripting, DBA experience with SQL Server.
+> **Prerequisites:
+Basic experience with Linux, basic familiarity with shell scripting, DBA experience with SQL Server.**
 
 # Questions?
 If you have questions or comments about this demo, don't hesitate to contact me at <crobles@dbamastery.com>
