@@ -13,7 +13,7 @@ We will explore the options and tools (open source) we have available when worki
 [3- Docker compose - Database + Application](Demo_03)  
 
 
-> Prerequisites:
+## Prerequisites
 * Basic experience with Linux
 * basic familiarity 
 * with shell scripting
