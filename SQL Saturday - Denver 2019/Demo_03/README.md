@@ -2,19 +2,23 @@
 
 * 1- Folder structure
 ```console
-Demo_02
-├── 2_1_DockerBuild.sh  # 👉 Demo script
-├── Backups
-│   └── humanresources_backup_2019_1105.bak
-├── DBA_scripts
-│   ├── RestoreDatabase.sql
-│   ├── CreateLoginsMaskData.sql
-│   ├── sql_deployment.sh
-│   └── entry_point.sh
-├── Dockerfile
-├── README.md
-└── .gitignore
-└── .dockerignore
+Demo_03_
+├── 3_1_DockerCompose.sh # 👉 Demo script
+├── hr_app
+│   ├── docker-compose.yml # 👉 Docker compose file
+│   ├── backend
+│   │   ├── appsettings.DockerAdmin.json
+│   │   ├── appsettings.DockerWebApp.json
+│   │   ├── Dockerfile
+│   │   ├── Controllers # 👉 Multiple folders was ommited
+│   │   └── Models # 👉 Multiple folders was ommited
+│   ├── frontend
+│   │   ├── Dockerfile
+│   │   └── src # 👉 Multiple folders was ommited
+│   └── README.md
+├── .dockerignore
+├── .gitignore
+└── README.md
 ```
 * 2- Inspect [Dockerfile](./hr_app/docker-compose.yml)
 * 3- Docker compose
