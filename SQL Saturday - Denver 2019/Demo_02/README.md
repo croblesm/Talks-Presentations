@@ -1,9 +1,23 @@
 # Demo 02 - Custom image for development
 
-# DEMO 2 - Docker build - Custom development image
-* 1- Show folder structure
-* 2- Show Dockerfile
-* 3- Show application scripts
+* 1- Folder structure
+```console
+Demo_02
+├── 2_1_DockerBuild.sh  # 👉 Demo script
+├── Backups
+│   └── humanresources_backup_2019_1105.bak
+├── DBA_scripts
+│   ├── RestoreDatabase.sql
+│   ├── CreateLoginsMaskData.sql
+│   ├── sql_deployment.sh
+│   └── entry_point.sh
+├── Dockerfile
+├── README.md
+└── .gitignore
+└── .dockerignore
+```
+* 2- Inspect [Dockerfile](Dockerfile)
+* 3- Inspect [application scripts](./DBA)
 * 4- Build custom image for development
 * 5- Test custom image (Create container)
 * 6- Check deployment logs (Azure Data Studio)
