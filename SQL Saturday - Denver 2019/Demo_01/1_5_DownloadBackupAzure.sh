@@ -2,8 +2,8 @@
 
 # Setting storage account settings
 destination_file=$1
-export  AZURE_STORAGE_ACCOUNT="dbamastery"
-export  AZURE_STORAGE_KEY="6aVnL92Y0ha4IRG2OB/vhKAuJynMia68t9ORB1/U99Trzbxr9E4xiO4/UBkvchK7Z2CpM4Dd3iR6K7YmPn4oew=="
+export  AZURE_STORAGE_ACCOUNT="MY STORAGE ACCOUNT NAME"
+export  AZURE_STORAGE_KEY="MY STORAGE ACCOUNT PASSWORD"
 container_name="sqlbackupfiles"
 
 echo -e "Starting script to download backups from Azure to local machine"
