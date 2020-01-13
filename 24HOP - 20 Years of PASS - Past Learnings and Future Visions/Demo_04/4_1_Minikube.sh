@@ -47,7 +47,8 @@ kubectl delete pod --all
 kubectl get pods
 
 # 9- Check new pod log
-kubectl logs -f mssql-deployment-6ff8956466-9sdhs
+MyPod=`kubectl get pods | grep "mssql-deployment" | awk '{ print $1}'`
+kubectl logs $MyPod
 
 # Take it home!
 echo "--------------------------------------" && \
