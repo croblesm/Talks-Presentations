@@ -1,0 +1,44 @@
+pipeline {
+  /* Enviroment variables */
+  environment {
+    /* Docker hub repository */
+    registry = "crobles10/hr-db-dev_stg"
+
+    /* Jenkins credentials */
+    registryCredential = 'docker-hub'
+    dockerImage = ''
+  }
+  agent any
+  stages {
+    stage('Cloning repository') {
+      steps{
+        /* Cloning the Repository to our Workspace */
+        checkout scm
+      }
+    }
+    stage('Building image') {
+      steps{
+        script {
+          /* Building image using Jenkins build number for tab */
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+    }
+    stage('Pushing Image') {
+      steps{
+        script {
+          /* Pushing image into Docker hub repository */
+          docker.withRegistry( '', registryCredential ) {
+          dockerImage.push()
+          }
+        }
+      }
+    }
+    stage('Removing last image') {
+      steps{
+        /* Removing last image - space optimization */
+        sh "docker rmi $registry:$BUILD_NUMBER"
+      }
+    }
+  }
+}
