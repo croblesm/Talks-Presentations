@@ -1,0 +1,22 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "HumanResources",
+            "dialect": "MSSQL",
+            "name": "Demo_02",
+            "password": "SqLr0ck$!",
+            "port": 1433,
+            "server": "localhost",
+            "username": "SA"
+        },
+        {
+            "database": "HumanResources",
+            "dialect": "MSSQL",
+            "name": "Demo_02_2",
+            "password": "123_D3v3L0pM3nt",
+            "port": 1433,
+            "server": "localhost",
+            "username": "dev_team"
+        }
+    ]
+}

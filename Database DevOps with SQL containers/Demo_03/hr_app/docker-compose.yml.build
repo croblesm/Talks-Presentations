@@ -1,0 +1,33 @@
+version: "3.4"
+services:
+    hr-frontend:
+        build:
+            context: ./hr-frontend
+            args:
+                - API_URL=localhost
+        container_name: hr-frontend
+        hostname: hr-frontend
+        ports:
+            - "90:80"
+        depends_on:
+            - hr-backend
+    hr-backend:
+        environment:
+            #- ASPNETCORE_ENVIRONMENT=DockerAdmin
+            - ASPNETCORE_ENVIRONMENT=DockerWebApp
+        build: ./hr-backend
+        container_name: hr-backend
+        hostname: hr-backend
+        ports:
+            - "5000:80"
+            - "44349:443"
+        depends_on:
+            - hr_sql_dev
+    hr_sql_dev:
+        image: crobles10/hr-db-dev_stg:10.0
+        environment:
+            - WAIT_SQL=35
+        container_name: hr_sql_dev
+        hostname: hr_sql_dev
+        ports:
+            - "1433:1433"

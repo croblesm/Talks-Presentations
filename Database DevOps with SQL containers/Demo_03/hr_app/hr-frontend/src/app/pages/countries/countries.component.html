@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Countries</h1>
+        <hr>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Country Name</th>
+                    <th>Region</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>{{item.country_id}}</td>
+                    <td>{{item.country_name}}</td>
+                    <td>{{item.region_id}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

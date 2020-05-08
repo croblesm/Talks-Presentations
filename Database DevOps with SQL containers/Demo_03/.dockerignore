@@ -1,0 +1,4 @@
+README.md
+3_1_DockerCompose.sh
+./hr_app/docker-compose.yml.build
+.gitignore

@@ -1,0 +1,103 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Employee</h1>
+        <button class="btn btn-primary" [routerLink]="['/employees/']">List Employees</button>
+        <hr>
+    </div>
+    <div class="col-md-3"> 
+        <label for="hire_date" class="col-md-12 control-label">Hire Date:</label> 
+        <div class="col-sm-12"> 
+            <div class="input-group input-group-sm">
+                <input type="date" class="form-control" id="hire_date" name="hire_date" [(ngModel)]="hireDate"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3"> 
+        <label for="department_id" class="col-md-12 control-label">Department:</label> 
+        <div class="col-sm-12">
+            <div class="input-group input-group-sm">
+                <select class="form-control" id="department_id" name="department_id" [(ngModel)]="item.department_id">
+                    <option *ngFor="let department of lstDepartment" [value]='department.department_id'>{{department.department_id}} - {{department.department_name}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label for="first_name" class="col-md-12 control-label">First Name:</label> 
+        <div class="col-sm-12"> 
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" id="first_name" name="first_name" [(ngModel)]="item.first_name"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label for="last_name" class="col-md-12 control-label">Last Name:</label> 
+        <div class="col-sm-12"> 
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" id="last_name" name="last_name" [(ngModel)]="item.last_name"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label for="email" class="col-md-12 control-label">Email:</label> 
+        <div class="col-sm-12"> 
+            <div class="input-group input-group-sm">
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="item.email"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label for="job_id" class="col-md-12 control-label">Job:</label> 
+        <div class="col-sm-12"> 
+            <div class="input-group input-group-sm">
+                <select class="form-control" id="job_id" name="job_id" [(ngModel)]="item.job_id">
+                    <option *ngFor="let job of lstJobs" [value]='job.job_id'>{{job.job_id}} - {{job.job_title}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label for="manager_id" class="col-md-12 control-label">Manager ID:</label> 
+        <div class="col-sm-12">
+            <div class="input-group input-group-sm">
+                <select class="form-control" id="manager_id" name="manager_id" [(ngModel)]="item.manager_id">
+                    <option [value]='null'>--</option>
+                    <option *ngFor="let manager of lstManager" [value]='manager.employee_id'>{{manager.employee_id}} - {{manager.first_name}} {{manager.last_name}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label for="phone_number" class="col-md-12 control-label">Phone Number:</label> 
+        <div class="col-sm-12"> 
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" id="phone_number" name="phone_number" [(ngModel)]="item.phone_number"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label for="salary" class="col-md-12 control-label">Salary:</label> 
+        <div class="col-sm-12"> 
+            <div class="input-group input-group-sm">
+                <input type="number" class="form-control" id="salary" name="salary" [(ngModel)]="item.salary"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-sm-12"> 
+            <br><br>
+            <button class="btn btn-success" (click)="submit()">Save</button>
+            &nbsp;&nbsp;
+            <button class="btn btn-danger" *ngIf="item.employee_id != 0" (click)="delete()">Delete</button>
+        </div>
+    </div>
+</div>

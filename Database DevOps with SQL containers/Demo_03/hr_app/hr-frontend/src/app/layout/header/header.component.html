@@ -1,0 +1,38 @@
+<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+                <img src="assets/logo_pass_summit_white.svg" height="30px">
+            </a>
+        </div>
+    
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="nav navbar-nav">
+                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" [routerLink]="['/']">Home</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" [routerLink]="['/regions']">Regions</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" [routerLink]="['/countries']">Countries</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" [routerLink]="['/locations']">Locations</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" [routerLink]="['/departments']">Departments</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" [routerLink]="['/jobs']">Jobs</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" [routerLink]="['/employees']">Employees</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" [routerLink]="['/dependents']">Dependents</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Departments</h1>
+        <hr>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Department Name</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>{{item.department_id}}</td>
+                    <td>{{item.department_name}}</td>
+                    <td>{{item.location_id}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

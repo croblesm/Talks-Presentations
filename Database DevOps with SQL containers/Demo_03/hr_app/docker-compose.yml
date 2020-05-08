@@ -1,0 +1,36 @@
+version: "3.4"
+services:
+    hr-frontend:
+        #image: hrapp_hr-frontend --Local image
+        #image: crobles10/hr-frontend:5.1 --Azure environment
+        image: crobles10/hr-frontend:5.0
+        environment:
+            - SERVER=localhost
+        container_name: hr-frontend
+        hostname: hr-frontend
+        ports:
+            - "90:80"
+        depends_on:
+            - hr-backend
+    hr-backend:
+        environment:
+            #- ASPNETCORE_ENVIRONMENT=DockerAdmin
+            - ASPNETCORE_ENVIRONMENT=DockerWebApp
+        #image: hrapp_hr-backend --Local image
+        #image: crobles10/hr-backend:5.1 --Azure environment
+        image: crobles10/hr-backend:5.0
+        container_name: hr-backend
+        hostname: hr-backend
+        ports:
+            - "5000:80"
+            - "44349:443"
+        depends_on:
+            - hr_sql_dev
+    hr_sql_dev:
+        image: crobles10/hr-db-dev_stg:10.0
+        environment:
+            - WAIT_SQL=40
+        container_name: hr_sql_dev
+        hostname: hr_sql_dev
+        ports:
+            - "1433:1433"

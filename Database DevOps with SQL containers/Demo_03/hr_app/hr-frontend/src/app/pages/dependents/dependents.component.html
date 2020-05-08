@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Dependents</h1>
+        <hr>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Relation Ship</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>{{item.dependent_id}}</td>
+                    <td>{{item.employee_id}}</td>
+                    <td>{{item.first_name}}</td>
+                    <td>{{item.last_name}}</td>
+                    <td>{{item.relationship}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
