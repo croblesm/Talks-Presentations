@@ -1,0 +1,31 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: hr-sql-dev
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mssql
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+        - name: hr-sql-dev
+          image: crobles10/hr-db-dev_stg:{{VERSION}}
+          ports:
+            - containerPort: 1433
+          env:
+            - name: WAIT_SQL
+              value: "35"
+            - name: ENVIRONMENT
+              value: "STG"        
+          volumeMounts:
+            - name: mssqldb
+              mountPath: /var/opt/mssql
+      volumes:
+        - name: mssqldb
+          persistentVolumeClaim:
+            claimName: hr-sql-dev-pvc

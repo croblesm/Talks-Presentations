@@ -1,0 +1,58 @@
+pipeline {
+  /* Enviroment variables */
+  environment {
+    /* Docker hub repository */
+    registry = "crobles10/hr-db-dev_stg"
+
+    /* Jenkins credentials for Docker hub */
+    registryCredential = 'docker-hub'
+    dockerImage = ''
+  }
+  agent any
+  stages {
+    stage('Cloning repository') {
+      steps{
+        /* Cloning the Repository to this Jenkins workspace */
+        checkout scm
+      }
+    }
+    stage('Building image') {
+      steps{
+        script {
+          /* Building image using Jenkins build number for tab */
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+    }
+    stage('Pushing Image') {
+      steps{
+        script {
+          /* Pushing image into Docker hub repository */
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+    stage('Updating SQL Server image version ') {
+        /* Updating SQL Server deployment with last version of custom image */
+        steps {
+            sh "sed  -i 's/{{VERSION}}/${BUILD_NUMBER}/g' ./deployments/dplmnt_database.yaml"
+        }
+    }
+    stage('Apply Kubernetes files') {
+        /* Applying image changes to SQL Server deployment */
+        steps {
+      withKubeConfig([credentialsId: 'jenkins-robot', serverUrl: 'https://apollo-stage-dns-c8fbf267.hcp.southcentralus.azmk8s.io:443']) {
+        sh 'kubectl apply -f ./deployments/dplmnt_database.yaml --record'
+      }
+        }
+    }
+    stage('Removing last image') {
+      steps{
+        /* Removing last image - space optimization */
+        sh "docker rmi $registry:$BUILD_NUMBER"
+      }
+    }
+  }
+}

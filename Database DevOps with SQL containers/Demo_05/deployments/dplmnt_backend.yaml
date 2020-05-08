@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hr-backend
+spec:
+  selector:
+    matchLabels:
+      app: hr
+      tier: backend
+      track: stable
+  replicas: 4 
+  template:
+    metadata:
+      labels:
+        app: hr
+        tier: backend
+        track: stable
+    spec:
+      containers:
+        - name: hr-backend
+          image: "crobles10/hr-backend:5.5"
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: DockerWebApp
+          ports:
+            - name: http
+              containerPort: 80
