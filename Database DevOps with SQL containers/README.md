@@ -1,5 +1,5 @@
 # PASS Virtualization - VG group
-## [Working with SQL Server containers to build database solutions](https://www.pass.org/summit/2019/Learn/SessionDetails.aspx?name=working-with-sql-server-containers-to-build-database-solutions&sid=92481)
+## [Database DevOps with SQL containers](bit.ly/3fp6T9Y)
 
 Containers are no longer the future, they are the present and are here to change the way DBAs used to think about building SQL Server solutions. Spending long periods of time installing, configuring, and preparing databases and SQL Server instances is no longer the case with containers. 
 
