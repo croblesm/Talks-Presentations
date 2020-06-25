@@ -5,6 +5,8 @@ Containers are no longer the future, they are the present and are here to change
 
 In this session, you will learn the basic and advanced methods to deploy a SQL Server solution using containers in minutes. We will explore the options and tools (open source) we have available when working with SQL Server running on Docker containers through real-world scenarios, like backing up\restoring databases, high availability, version upgrades, and the most important portability between cross platforms.
 
+[![PASS Virtualization - VG](https://img.youtube.com/vi/KWl-LAZmoF4/hqdefault.jpg)](https://youtu.be/KWl-LAZmoF4 "Database DevOps with SQL containers - Carlos Robles")
+
 ## **Prerequisites**  
 * Basic experience with Linux
 * Basic familiarity with shell scripting
